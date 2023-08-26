@@ -1,44 +1,25 @@
-import { Component } from '@angular/core';
-import { DomSanitizer } from '@angular/platform-browser';
-
+import { Component, HostListener, OnInit } from '@angular/core';
+import * as Aos from 'aos';
+import { DocumentsServices } from 'src/app/services/documents.service';
+import { WorksService } from 'src/app/services/works.service';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export class HomeComponent {
-  constructor(private sanitizer: DomSanitizer) { }
-  link1 = this.sanitizer.bypassSecurityTrustResourceUrl('assets/CERTIFICACIONES MINTIC 2022133.pdf');
-  documents: Array<any> = [
-    {
-      name: 'CERTIFICACIONES MINTIC 2022133.pdf',
-      link: this.sanitizer.bypassSecurityTrustResourceUrl('assets/CERTIFICACIONES MINTIC 2022133.pdf'),
+export class HomeComponent implements OnInit {
+  section_two_visible = false;
+  documents: any[] = [];
+  works: any[] = [];
+  constructor(
+    private documentsService: DocumentsServices,
+    private worksServices: WorksService
+  ) {
+    this.documents = documentsService.detDocuments();
+    this.works = worksServices.getWorks();
+  }
+  ngOnInit(): void {
+    Aos.init();
+  }
 
-    },
-    {
-      name: 'DIPLOMADO DESARROLLO DE APLICACIONES MÓVILES - RUTA 2 MISIÓN TIC 2022',
-      link: this.sanitizer.bypassSecurityTrustResourceUrl('assets/DIPLOMADO DESARROLLO DE APLICACIONES MÓVILES - RUTA 2 MISIÓN TIC 2022.pdf'),
-
-    },
-    {
-      name: 'DIPLOMADO DESARROLLO DE SOFTWARE - RUTA 2 MISIÓN TIC 2022',
-      link: this.sanitizer.bypassSecurityTrustResourceUrl('assets/DIPLOMADO DESARROLLO DE SOFTWARE - RUTA 2 MISIÓN TIC 2022.pdf'),
-
-    },
-    {
-      name: 'DIPLOMADO FUNDAMENTOS DE PROGRAMACIÓN - RUTA 2 MISIÓN TIC 2022',
-      link: this.sanitizer.bypassSecurityTrustResourceUrl('assets/DIPLOMADO FUNDAMENTOS DE PROGRAMACIÓN - RUTA 2 MISIÓN TIC 2022.pdf'),
-
-    },
-    {
-      name: 'DIPLOMADO PROGRAMACIÓN BÁSICA - RUTA 2 MISIÓN TIC 2022',
-      link: this.sanitizer.bypassSecurityTrustResourceUrl('assets/DIPLOMADO PROGRAMACIÓN BÁSICA - RUTA 2 MISIÓN TIC 2022.pdf'),
-
-    },
-    {
-      name: 'Mencion_estudiantes_destacados_40',
-      link: this.sanitizer.bypassSecurityTrustResourceUrl('assets/Mencion_estudiantes_destacados_40.pdf'),
-
-    },
-  ]
 }

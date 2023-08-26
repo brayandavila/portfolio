@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
-import { filter } from 'rxjs';
+import { TranslateService } from '@ngx-translate/core';
+import { LanguageService } from 'src/app/services/language.service';
 
 @Component({
   selector: 'app-navbar',
@@ -9,31 +10,37 @@ import { filter } from 'rxjs';
 })
 export class NavbarComponent implements OnInit {
   routeActive: string = '';
+  viewDropdown = false;
   menu: Array<any> = [
     {
-      name: 'Home',
+      name: 'item1',
       link: '/',
       active: false
     },
     {
-      name: 'Projects',
+      name: 'item2',
       link: '/projects',
       active: false
     },
     {
-      name: 'About',
+      name: 'item3',
       link: '/about',
       active: false
     },
     {
-      name: 'Contact',
+      name: 'item4',
       link: '/contact',
       active: false
     },
   ]
+  language!: string;
   constructor(
-    private router: Router
-  ) { }
+    private router: Router,
+    private translate: TranslateService,
+    private languageService: LanguageService
+  ) {
+    this.language = translate.getDefaultLang();
+  }
 
   ngOnInit(): void {
     this.router.events.subscribe((event: any) => {
@@ -57,5 +64,14 @@ export class NavbarComponent implements OnInit {
       element.active = false
     });
     this.menu[index].active = true
+  }
+
+  changeLanguage(language: string) {
+    this.translate.setDefaultLang(language);
+    this.translate.use(language);
+    this.language = language;
+    localStorage.setItem("language", language);
+    this.languageService.getLanguage();
+    window.location.reload()
   }
 }

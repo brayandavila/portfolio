@@ -1,4 +1,11 @@
-<app-navbar></app-navbar>
-<main class="px-2 sm:px-4 h-max relative">
-  <router-outlet></router-outlet>
-</main>
+<ng-container *ngIf="!loading; else loadingTtemplate">
+  <app-navbar />
+  <main class="px-2 sm:px-4 h-max relative">
+    <router-outlet></router-outlet>
+  </main>
+  <app-footer />
+</ng-container>
+
+<ng-template #loadingTtemplate>
+  <app-loading />
+</ng-template>

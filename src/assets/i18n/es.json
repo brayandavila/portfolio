@@ -1,0 +1,13 @@
+{
+  "hello": "Hola, mi nombre es",
+  "spanish": "Español",
+  "english": "Inglés",
+  "item1": "Inicio",
+  "item2": "Proyectos",
+  "item3": "Acerca de mí",
+  "item4": "Contacto",
+  "position": "Desarrollador Fullstack",
+  "description": "<p>Tecnólogo en desarrollo de sistemas informáticos con experiencia endiversos lenguajes de programación,incluyendo JavaScript, Python, C++, SQL,Typescript, Dart y PHP.</p><p> Competente en el manejo de frameworks como Angular, Laravel y Flutter, y habilidades en el uso de herramientas de control de versiones como Git y GitHub.</p>",
+  "work_experience": "Experiencia Laboral",
+  "education": "Trayectoria Educativa"
+}

@@ -1,0 +1,13 @@
+{
+  "hello": "Hi, my name is",
+  "spanish": "Spanish",
+  "english": "English",
+  "item1": "Home",
+  "item2": "Projects",
+  "item3": "About me",
+  "item4": "Contact",
+  "position": "Fullstack Developer",
+  "description": "<p> Technologist in Computer Systems Development with experience in various programming languages, including JavaScript, Python, C++, SQL, TypeScript, Dart, and PHP.</p><p>Proficient in handling frameworks like Angular, Laravel, and Flutter, and skilled in the use of version control tools such as Git and GitHub.</p>",
+  "work_experience": "Work Experience",
+  "education": "Educational Journey"
+}
