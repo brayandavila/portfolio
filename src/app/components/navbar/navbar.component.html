@@ -13,8 +13,10 @@
           (click)="changeItem(i)"
           [routerLink]="[item.link]"
           aria-current="page"
-          >{{ item.name | translate }}</a
         >
+          <img [src]="item.icon" class="w-5 md:hidden block" alt="" />
+          <span class="hidden md:block">{{ item.name | translate }}</span>
+        </a>
         <div class="relative">
           <button
             id="dropdownDefaultButton"

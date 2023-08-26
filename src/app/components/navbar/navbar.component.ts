@@ -15,22 +15,26 @@ export class NavbarComponent implements OnInit {
     {
       name: 'item1',
       link: '/',
-      active: false
+      active: false,
+      icon: 'assets/icons/home.svg'
     },
     {
       name: 'item2',
       link: '/projects',
-      active: false
+      active: false,
+      icon: 'assets/icons/code.svg'
     },
     {
       name: 'item3',
       link: '/about',
-      active: false
+      active: false,
+      icon: 'assets/icons/info.svg'
     },
     {
       name: 'item4',
       link: '/contact',
-      active: false
+      active: false,
+      icon: 'assets/icons/phone.svg'
     },
   ]
   language!: string;
