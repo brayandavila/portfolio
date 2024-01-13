@@ -9,6 +9,7 @@ import { ContactComponent } from './contact/contact.component';
 import { ComponentsModule } from '../components/components.module';
 import { TranslateModule } from '@ngx-translate/core';
 import { LocalizedDatePipe } from '../pipes/localized-date.pipe';
+import { CarouselModule } from '@coreui/angular';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { LocalizedDatePipe } from '../pipes/localized-date.pipe';
     CommonModule,
     PagesRoutingModule,
     ComponentsModule,
-    TranslateModule
+    TranslateModule,
+    CarouselModule
   ]
 })
 export class PagesModule { }

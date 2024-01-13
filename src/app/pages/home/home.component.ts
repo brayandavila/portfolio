@@ -17,6 +17,7 @@ export class HomeComponent implements OnInit {
   ) {
     this.documents = documentsService.detDocuments();
     this.works = worksServices.getWorks();
+    console.log(this.documents)
   }
   ngOnInit(): void {
     Aos.init();

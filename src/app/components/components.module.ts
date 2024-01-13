@@ -5,6 +5,7 @@ import { RouterModule } from '@angular/router';
 import { FooterComponent } from './footer/footer.component';
 import { LoadingComponent } from './loading/loading.component';
 import { TranslateModule } from '@ngx-translate/core';
+import { LoadImageComponent } from './load-image/load-image.component';
 
 
 
@@ -12,7 +13,8 @@ import { TranslateModule } from '@ngx-translate/core';
   declarations: [
     NavbarComponent,
     FooterComponent,
-    LoadingComponent
+    LoadingComponent,
+    LoadImageComponent
   ],
   imports: [
     CommonModule,
