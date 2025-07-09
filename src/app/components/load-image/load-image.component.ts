@@ -18,8 +18,9 @@ export class LoadImageComponent {
 
   isLoadImage: boolean = false;
 
-  constructor() { }
+  constructor() {}
 
   loadImage(): void {
     this.isLoadImage = true;
   }
+}
